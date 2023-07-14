@@ -15,7 +15,7 @@ const Footer = () => {
             <div className='border-t border-[#585858]'>
                 <div className='flex md:flex-row flex-col-reverse justify-center items-center md:justify-between w-full mt-8'>
                     <p className=' text-sm mt-6 md:mt-0 font-Ubuntu font-normal text-[#fff]'>© 2023 Assaui Journals. All Rights Reserved.</p>
-                    <p className="text-[#fff]">socials</p>
+                    <p className="text-[#fff]">social</p>
                 </div>
             </div>
         </div>
