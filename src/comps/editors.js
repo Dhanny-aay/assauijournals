@@ -6,8 +6,7 @@ const Editors = () => {
     return ( 
         <>
         <div className=" w-full px-5 md:px-10 lg:px-20 pb-20">
-            <p className=" font-medium font-Ubuntu text-2xl md:text-3xl text-[#121212]">Editors</p>
-            <p className=" font-normal font-Ubuntu text-lg text-[#202020] mt-3">Meet our Editors</p>
+            <p className=" font-medium font-Ubuntu text-center text-2xl md:text-3xl text-[#121212]">Editors</p>
             <div className="flex space-y-10 lg:space-y-0 items-center lg:justify-between flex-col lg:flex-row mt-8">
                 <div className=" w-full md:w-[330px] rounded h-[370px] bg-transparent relative">
                     <img src={ ptr } className=' w-full h-[170px] rounded-t' alt="" />

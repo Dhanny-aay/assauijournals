@@ -6,7 +6,7 @@ const Posts = () => {
     return ( 
         <>
         <div className=" w-full px-5 md:px-10 lg:px-20 py-20">
-            <p className=" font-medium font-Ubuntu text-2xl md:text-3xl text-[#121212]">Blogs</p>
+            <p className=" font-medium font-Ubuntu text-center text-2xl md:text-3xl text-[#121212]">Blogs</p>
             <div className="flex space-y-10 lg:space-y-0 items-center lg:justify-between flex-col lg:flex-row mt-8">
                 <div className=" w-full md:w-[330px] shadow-sm rounded h-[370px] bg-[#fff] relative">
                     <img src={ posOne } className=' w-full h-[170px] rounded-t' alt="" />
