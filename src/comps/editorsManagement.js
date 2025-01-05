@@ -28,6 +28,7 @@ const EditorsManagement = () => {
     name: "",
     about: "",
     imageUrl: "",
+    position: "", // Added position field
   });
   const [editingEditor, setEditingEditor] = useState(null);
 
@@ -113,6 +114,7 @@ const EditorsManagement = () => {
       const editorData = {
         name: formData.name,
         about: formData.about,
+        position: formData.position,
         imageUrl,
       };
 
@@ -135,7 +137,7 @@ const EditorsManagement = () => {
   };
 
   const resetForm = () => {
-    setFormData({ name: "", about: "", imageUrl: "" });
+    setFormData({ name: "", about: "", imageUrl: "", position: "" });
     setSelectedImage(null);
     setImagePreview(null);
     setEditingEditor(null);
@@ -159,6 +161,7 @@ const EditorsManagement = () => {
       name: editor.name,
       about: editor.about,
       imageUrl: editor.imageUrl,
+      position: editor.position,
     });
     setImagePreview(editor.imageUrl);
     setShowSlideOver(true);
@@ -231,10 +234,13 @@ const EditorsManagement = () => {
                     alt={editor.name}
                     className="w-full h-56 object-cover rounded-md mb-4"
                   />
-                  <div className=" p-4">
+                  <div className="p-4">
                     <h3 className="font-semibold text-lg font-Archivo">
                       {editor.name}
                     </h3>
+                    <p className="text-gray-500 text-sm font-Ubuntu mt-1">
+                      {editor.position}
+                    </p>
                     <p className="text-gray-600 mt-2 text-sm font-Ubuntu">
                       {editor.about}
                     </p>
@@ -327,6 +333,25 @@ const EditorsManagement = () => {
                             setFormData({ ...formData, name: e.target.value })
                           }
                           required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-Archivo font-medium text-gray-700">
+                          Position
+                        </label>
+                        <input
+                          type="text"
+                          className="mt-1 w-full px-4 py-2 border font-Ubuntu text-sm rounded-md"
+                          value={formData.position}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              position: e.target.value,
+                            })
+                          }
+                          required
+                          placeholder="e.g. Senior Editor"
                         />
                       </div>
 

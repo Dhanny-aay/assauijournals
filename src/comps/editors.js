@@ -53,11 +53,14 @@ const Editors = () => {
                     alt={journal.fileName}
                   />
 
-                  <div className=" py-4">
-                    <p className="m-3 text-xl text-black font-Ubuntu capitalize font-semibold">
+                  <div className=" w-full p-4">
+                    <p className="mt-3 text-xl text-black font-Ubuntu capitalize font-semibold">
                       {journal.name}
                     </p>
-                    <p className="m-3 font-Ubuntu font-normal text-sm text-[#000000c3]">
+                    <p className="text-gray-500 text-sm font-Ubuntu mt-1">
+                      {journal.position}
+                    </p>
+                    <p className="mt-3 font-Ubuntu font-normal text-sm text-[#000000c3]">
                       {journal.about}
                     </p>
                   </div>
