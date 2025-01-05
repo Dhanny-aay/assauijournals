@@ -31,7 +31,7 @@ const Hero = () => {
         {/* Latest Journal Section */}
         <div className="w-full absolute bottom-0 md:px-10 lg:px-[15%]">
           <div className="w-full h-[220px] bg-[#bbb9b9a1] relative rounded-t-md text-black pr-24">
-            <span className="bg-[#1b1b1b] flex rounded-bl-md h-[60px] w-[220px] rotate-90 translate-y-[80px] -translate-x-[80px] justify-center items-center text-[#fff]">
+            <span className="bg-[#1b1b1b] flex rounded-bl-md h-[60px] overflow-hidden w-[220px] rotate-90 translate-y-[80px] -translate-x-[80px] justify-center items-center text-[#fff]">
               <p className="rotate-180 font-Ubuntu text-sm md:text-base font-medium">
                 Latest Journal
               </p>
@@ -48,8 +48,10 @@ const Hero = () => {
                 <p className="font-Ubuntu text-base md:text-lg font-medium">
                   {latestJournal.name}
                 </p>
-                <p className="font-Ubuntu text-sm font-normal mt-3">
-                  {latestJournal.excerpt}
+                <p className="font-Ubuntu text-sm font-normal mt-3 ">
+                  {latestJournal.excerpt.length > 200
+                    ? `${latestJournal.excerpt.slice(0, 200)}...`
+                    : latestJournal.excerpt}
                 </p>
                 {/* <Link></Link> */}
                 {/* <Link

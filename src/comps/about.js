@@ -37,7 +37,7 @@ const About = () => {
           {/* Mission Section */}
           <div className="flex flex-row md:space-x-8 items-center w-full">
             <img src={mission} className="hidden md:block w-14" alt="Mission" />
-            <span className="h-[80px] w-full bg-[#1b1b1b] shadow rounded flex justify-center items-center px-5 py-6">
+            <span className=" w-full bg-[#1b1b1b] shadow rounded flex justify-center items-center px-5 py-6">
               {generalLoading ? (
                 <Skeleton count={2} className="w-full" />
               ) : (
