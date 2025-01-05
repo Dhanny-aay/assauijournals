@@ -1,18 +1,31 @@
-import ptr from "../image/ptr.jpg";
-import port from "../image/port.jpg";
-import portra from "../image/potra.jpg";
-import { useEditors } from "../contexts/editorsContext";
+import ContactPrompt from "../comps/contactPrompt";
+import Footer from "../comps/footer";
+import Navbar from "../comps/navbar";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
+import { useEditors } from "../contexts/editorsContext";
 
-const Editors = () => {
+const EditorsPage = () => {
   const { editors, loading: editorsLoading } = useEditors();
 
-  console.log(editors);
   return (
     <>
-      <div className=" w-full px-5 md:px-10 lg:px-20 pb-20">
+      <div className=" w-full h-[400px] bg-hero bg-cover text-white bg-no-repeat relative">
+        <Navbar />
+        <div className=" mt-16 w-full px-5 md:px-10 lg:px-20md:mt-32 text-[25px] md:text-4xl font-Ubuntu font-semibold flex flex-col justify-center items-center">
+          <p className="text-center lg:w-[900px]">
+            Meet Our Editors: Pioneering Thoughtful Expression and Inspiring
+            Change!
+          </p>
+          <p className="text-center mt-5 text-lg text-[#bdbbbb] font-medium">
+            Shaping Voices, Crafting Stories, and Uniting Communities through
+            Thoughtful Dialogue
+          </p>
+        </div>
+      </div>
+
+      <div className=" w-full px-5 md:px-10 lg:px-20 py-16">
         <p className=" font-medium font-Ubuntu text-center text-2xl md:text-3xl text-[#121212]">
           Editors
         </p>
@@ -42,7 +55,7 @@ const Editors = () => {
                     </div>
                   </div>
                 ))
-            : editors.slice(0, 3).map((journal) => (
+            : editors.map((journal) => (
                 <div
                   key={journal.id}
                   className={`w-full border border-[#6767676c] rounded-[8px] relative`}
@@ -64,14 +77,13 @@ const Editors = () => {
                 </div>
               ))}
         </div>
-        <Link to="/editors">
-          <button className=" text-center block ml-auto mt-8 px-4 py-2 border border-black text-base font-medium font-Ubuntu">
-            Meet More
-          </button>
-        </Link>
       </div>
+
+      <ContactPrompt />
+
+      <Footer />
     </>
   );
 };
 
-export default Editors;
+export default EditorsPage;

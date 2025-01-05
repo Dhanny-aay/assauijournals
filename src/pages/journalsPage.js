@@ -1,21 +1,36 @@
+// import Contact from "../comps/contact";
+import ContactPrompt from "../comps/contactPrompt";
+import Footer from "../comps/footer";
+import Navbar from "../comps/navbar";
 import { useJournals } from "../contexts/journalsContext";
-import posOne from "../image/posone.jpg";
-import postwo from "../image/postwo.jpg";
-import posThree from "../image/posthree.jpg";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 
-const Journal = () => {
+const JournalPage = () => {
   const { journals, loading: journalsLoading } = useJournals();
 
-  console.log(journals);
   return (
     <>
-      <div className=" w-full px-5 md:px-10 lg:px-20 py-20">
+      <div className="  w-full h-[400px] bg-hero bg-cover text-white bg-no-repeat relative">
+        <Navbar />
+        <div className=" mt-16 w-full px-5 md:px-10 lg:px-20md:mt-32 text-[25px] md:text-4xl font-Ubuntu font-semibold flex flex-col justify-center items-center">
+          <p className="text-center lg:w-[900px]">
+            Welcome to Our Journal: A Space for Ideas, Reflection, and
+            Discovery!
+          </p>
+          <p className="text-center mt-5 text-lg text-[#bdbbbb] font-medium">
+            Exploring Perspectives, Sharing Insights, and Fostering Intellectual
+            Growth
+          </p>
+        </div>
+      </div>
+
+      <div className=" w-full px-5 md:px-10 lg:px-20 py-16">
         <p className=" font-medium font-Ubuntu text-center text-2xl md:text-3xl text-[#121212]">
           Journals
         </p>
+
         <div
           className={`w-full grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16 ${
             journals.length === 1
@@ -42,7 +57,7 @@ const Journal = () => {
                     </div>
                   </div>
                 ))
-            : journals.slice(0, 3).map((journal) => (
+            : journals.map((journal) => (
                 <div
                   key={journal.id}
                   className={`w-full  shadow-sm border border-[#6767677d] rounded-[8px] relative`}
@@ -78,30 +93,28 @@ const Journal = () => {
                         </svg>
                       </a>
                     </div>
-                    <p className="mt-3 font-Ubuntu font-normal text-sm text-[#000000c3]">
+                    <p className=" mt-3 font-Ubuntu font-normal text-sm text-[#000000c3]">
                       {journal.excerpt}
                     </p>
                   </div>
                   {/* <Link
-                    to="/journals"
-                    className="bottom-5 right-6 text-sm text-[#000] font-Ubuntu font-medium absolute cursor-pointer"
-                    onClick={() =>
-                      (window.location.href = `/journals/${journal.id}`)
-                    }
-                  >
-                    Read More...
-                  </Link> */}
+                            to="/journals"
+                            className="bottom-5 right-6 text-sm text-[#000] font-Ubuntu font-medium absolute cursor-pointer"
+                            onClick={() =>
+                              (window.location.href = `/journals/${journal.id}`)
+                            }
+                          >
+                            Read More...
+                          </Link> */}
                 </div>
               ))}
         </div>
-        <Link to="/journals">
-          <button className=" text-center block ml-auto mt-10 px-4 py-2 border border-black text-base font-medium font-Ubuntu">
-            View More
-          </button>
-        </Link>
       </div>
+
+      <ContactPrompt />
+      <Footer />
     </>
   );
 };
 
-export default Journal;
+export default JournalPage;
