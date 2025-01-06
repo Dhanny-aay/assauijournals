@@ -21,8 +21,8 @@ const Hero = () => {
         <Navbar />
         <div className=" w-full px-5 md:px-10 lg:px-20 mt-20 md:mt-32 text-[25px] md:text-4xl font-Ubuntu font-semibold">
           <p className=" lg:w-[900px]">
-            Embrace the Power of Expression: Contribute to Our Collective
-            Journaling Experience!
+            Re-engineering African thoughts, ideologies towards decolonizing
+            scholarship from the graduate level
           </p>
           <p className=" mt-5 text-lg text-[#bdbbbb] font-medium">
             Connecting Through Written Expression
